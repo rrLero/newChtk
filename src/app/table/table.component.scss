@@ -1,0 +1,28 @@
+.router {
+  max-width: 400px;
+  margin-top: 15px;
+  margin-left: 13%;
+}
+
+$table-font-color: #4e5a5f;
+$table-border-color: #e9ebec;
+
+:host{
+  /deep/ {
+    *{
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    table{
+      color: $table-font-color;
+      tr {
+        td,th{
+          border: 2px solid $table-border-color;
+        }
+      }
+      th {
+        text-align: left;
+      }
+    }
+  }
+}
