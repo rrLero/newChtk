@@ -1,0 +1,44 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+  <div fxFlex>
+    <div>
+      <h3>Contact Us</h3>
+      <hr>
+    </div>
+  </div>
+  <div fxFlex >
+    <h3>Location Information</h3>
+    <div fxLayout="row" fxLayout.gt-sm="row">
+      <md-card fxFlex="50"
+               fxFlexOffset="20px"
+               *ngFor="let cour of court"
+               (mouseover) = "onSelect(cour.id);"
+               id="{{cour.id}}"
+               (mouseout) = "onRemove(cour.id);">
+        <md-card-header>
+          <img md-card-avatar src="/src/assets/images/logo2.png">
+          <md-card-title>
+            {{cour.name | uppercase}}
+          </md-card-title>
+          <md-card-subtitle>
+            {{cour.adress}}
+          </md-card-subtitle>
+        </md-card-header>
+        <img md-card-image *ngIf="cour.image" src="{{path + cour.image}}" alt = "{{cour.name}}">
+        <img md-card-image *ngIf="!cour.image" src="/src/assets/images/Federer.png" alt = "{{cour.name}}">
+        <md-card-content>
+          {{ cour.description}} <br>
+          <p>
+            <i class="fa fa-thermometer-full"> : {{cour.type}}</i><br>
+            <i class="fa fa-phone"></i> : {{cour.phones}}
+          </p>
+        </md-card-content>
+        <md-card-actions>
+            <a md-raised-button href="tel:+380674707676"><i class="fa fa-phone"></i> Call</a>
+            <a md-raised-button href="mailto:roman@xlan.net.ua"><i class="fa fa-envelope-o"></i> Email</a><br>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </div>
+</div>

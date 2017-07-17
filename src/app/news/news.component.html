@@ -1,0 +1,38 @@
+<div class="container"
+     fxLayout="row"
+     fxLayoutGap="10px">
+  <div fxFlex>
+    <app-newsdetail [dish]="selectedDish"></app-newsdetail>
+  </div>
+  <div fxFlex>
+    <div>
+      <h3>News</h3>
+      <hr>
+    </div>
+    <md-grid-list cols="1" rowHeight="200px" class="news">
+      <md-grid-tile *ngFor="let dish of dishes"
+                    (click) = "onSelect(dish);"
+                    id="{{dish.id}}"
+                    (mouseover) = "onSetup(dish.id);"
+                    (mouseout) = "onRemove(dish.id);"
+      >
+        <img *ngIf="dish.image"  width="100%" src={{path+dish.image}}>
+        <img *ngIf="!dish.image"  height="100%" src="/src/assets/images/Federer.png">
+        <md-grid-tile-footer>
+          <p md-line><span>{{dish.date | date :'short'}}</span></p>
+          <h1 md-line>{{dish.title | uppercase}}</h1>
+        </md-grid-tile-footer>
+      </md-grid-tile>
+    </md-grid-list>
+  </div>
+  <div fxFlex>
+    <div>
+      <h3>Rating</h3>
+      <hr>
+      <app-rating></app-rating>
+    </div>
+
+  </div>
+
+</div>
+
