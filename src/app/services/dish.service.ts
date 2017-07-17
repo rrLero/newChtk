@@ -17,10 +17,10 @@ export class DishService {
     let x = document.getElementById('active');
     x.id = id;
   }
-  setMargin(): void {
-    document.addEventListener("DOMContentLoaded", function(e) {
-      let eval_table = document.getElementsByClassName('ng2-table') as HTMLCollectionOf<HTMLElement>;
-      eval_table[0].style.marginLeft = '0px';
-    });
-  }
+  // setMargin(): void {
+  //   document.addEventListener("DOMContentLoaded", function(e) {
+  //     let eval_table = document.getElementsByClassName('ng2-table') as HTMLCollectionOf<HTMLElement>;
+  //     eval_table[0].style.marginLeft = '0px';
+  //   });
+  // }
 }

@@ -24,7 +24,6 @@ export class NewsComponent implements OnInit {
     this.dishes = this.dishService.getDishes();
     this.selectedDish = this.dishes[0];
     this.rating = this.ratingservice.getRating();
-    this.dishService.setMargin();
   }
 
   onSelect(dish: Dish) {
