@@ -10,7 +10,7 @@ export class RatingService {
 
     constructor() { }
 
-    getRating(year: number): Player[] {
+    getRating(year = 2017): Player[] {
         if (year) {
             return RATING;
         }

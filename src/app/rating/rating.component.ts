@@ -1,7 +1,7 @@
 /**
  * Created by rrlero on 16.07.17.
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -15,6 +15,9 @@ import { Player } from '../shared/player';
     styleUrls: ['./rating.component.scss']
 })
 export class RatingComponent implements OnInit {
+    @Input()
+    rating: Player;
+
     settings = {
         columns: {
             surname: {
@@ -44,7 +47,7 @@ export class RatingComponent implements OnInit {
     ngOnInit() {
         const year = +this.route.snapshot.params['year'];
         this.data = this.ratingservice.getRating(year);
-        console.log(this.data[2].surname)
+        console.log(this.data)
     }
     goBack(): void {
         this.location.back();
