@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const helpers = require('./helpers');
 // const { CheckerPlugin, TsConfigPathsPlugin } = require('awesome-typescript-loader');
 
@@ -30,27 +30,28 @@ module.exports = webpackMerge(commonConfig, {
     plugins: [
         // new TsConfigPathsPlugin(),
         // new CheckerPlugin(),
-        new ExtractTextPlugin('[name].css'),
+        new ExtractTextPlugin({ disable: true }),
         new webpack.NamedModulesPlugin(),
         new webpack.DefinePlugin({
             'process.env': {
                 'ENV': JSON.stringify(ENV)
             }
         }),
-        new BrowserSyncPlugin({
-                open: false,
-                notify: false,
-                port: 9000,
-                proxy: 'http://localhost:8080/'
-            },
-            {
-                reload: false
-            })
+        // new BrowserSyncPlugin({
+        //         open: false,
+        //         notify: false,
+        //         port: 9000,
+        //         proxy: 'http://localhost:8080/'
+        //     },
+        //     {
+        //         reload: false
+        //     })
     ],
 
     devServer: {
         historyApiFallback: true,
-        stats: 'minimal'
+        noInfo: false,
+        stats: { colors: true },
     },
     watchOptions: {
         aggregateTimeout: 100
