@@ -1,14 +1,14 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { FormsModule } from '@angular/forms';
+// import { HttpModule } from '@angular/http';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MdButtonModule } from '@angular/material';
+import { MaterialModule, MdButtonModule } from '@angular/material';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import 'hammerjs';
+// import 'hammerjs';
 
 import { AppComponent }  from './app.component';
 import { NewsComponent } from './news/news.component';
@@ -28,9 +28,9 @@ import { RatingService } from './services/rating.service';
 @NgModule({
     imports: [
         BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        HttpModule,
+        // BrowserAnimationsModule,
+        // FormsModule,
+        // HttpModule,
         MaterialModule,
         FlexLayoutModule,
         AppRoutingModule,

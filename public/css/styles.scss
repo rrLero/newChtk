@@ -1,4 +1,5 @@
-
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
 $lt-gray: #ddd;
 $background-dark: #512DA8;
 $background-light: #0b38cd;
@@ -34,6 +35,7 @@ body {
   overflow-x: hidden;
   padding: 0;
   margin: 0;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 
 .background-primary {
