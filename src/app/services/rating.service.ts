@@ -18,9 +18,8 @@ export class RatingService {
 
     constructor(private http: Http, private processHTTPMsgService: ProcessHTTPMsgService) { }
 
-    getRating(year = 2017): Observable<Player[]> {
+    getRating(year = +(new Date()).getFullYear()): Observable<Player[]> {
         return this.http.get(baseURL + 'api/rating/' + year)
             .map(res => { return this.processHTTPMsgService.extractData(res); })
-        // return Observable.of(RATING).delay(year);
     }
 }

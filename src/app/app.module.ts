@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule, MdButtonModule } from '@angular/material';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 // import 'hammerjs';
 
@@ -23,7 +22,8 @@ import { TableComponent } from './table/table.component';
 import { AddplayerComponent } from './addplayer/addplayer.component';
 import { CoachesComponent} from './coaches/coaches.component';
 
-import { baseURL} from './shared/baseurl';
+import { baseURL} from './shared/baseurl'
+import { imageURL } from './shared/imageurl'
 
 
 import { DishService } from './services/dish.service';
@@ -42,7 +42,6 @@ import { CoachesService } from './services/coaches.service';
         FlexLayoutModule,
         AppRoutingModule,
         MdButtonModule,
-        Ng2SmartTableModule,
         ReactiveFormsModule
     ],
     declarations: [
@@ -64,7 +63,8 @@ import { CoachesService } from './services/coaches.service';
         RatingService,
         ProcessHTTPMsgService,
         CoachesService,
-        {provide: 'BaseURL', useValue: baseURL}
+        {provide: 'BaseURL', useValue: baseURL},
+        {provide: 'ImageURL', useValue: imageURL},
         ],
     bootstrap: [AppComponent]
 })

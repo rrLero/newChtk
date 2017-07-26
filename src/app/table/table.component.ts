@@ -18,43 +18,25 @@ import 'rxjs/add/operator/switchMap';
 })
 export class TableComponent implements OnInit {
     @Input()
-    rating: Player;
-
-    settings = {
-        columns: {
-            place: {
-                title: 'Place',
-                filter: false,
-                width: '10%'
-            },
-            surname: {
-                title: 'Surname',
-                filter: false,
-                width: '80%'
-            },
-            points: {
-                title: 'Points',
-                filter: false,
-                width: '10%'
-            }
-        },
-        actions: {
-            edit: false,
-            add: false,
-            delete: false
-        }
-    };
+    rating: Player[];
     data: Player[];
+    year: number;
 
     constructor(private route: ActivatedRoute,
                 private location: Location,
                 private ratingservice: RatingService) { }
 
     ngOnInit() {
+        this.year = +(new Date()).getFullYear();
         // const year = +this.route.snapshot.params['year'];
-        this.route.params.switchMap((params: Params) => this.ratingservice.getRating(+params['year'] || 2017))
-            .subscribe(data => {this.data = data});
-        // this.ratingservice.getRating(year).subscribe(data => this.data = data);
+        this.route.params.switchMap((params: Params) => this.ratingservice.getRating(+params['year'] || this.year))
+            .subscribe(rating => {
+                if (this.location.path().includes('/home/')) {
+                    this.rating = rating.splice(0, 10);
+                } else {
+                    this.rating = rating;
+                }
+            });
     }
     goBack(): void {
         this.location.back();

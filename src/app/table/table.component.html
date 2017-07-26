@@ -1,3 +1,16 @@
-<div class="ng2-table" id="ng2-table" *ngIf="data || rating">
-    <ng2-smart-table [settings]="settings" [source]="data || rating"></ng2-smart-table>
-</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Имя Фамилия</th>
+        <th>Очки</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let player of rating">
+    <tr>
+        <th scope="row">{{player.place}}</th>
+        <td>{{player.surname}}</td>
+        <td>{{player.points}}</td>
+    </tr>
+    </tbody>
+</table>

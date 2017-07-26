@@ -8,7 +8,7 @@ import '@angular/flex-layout';
 
 
 import '@angular/platform-browser/animations';
-// import '@angular/http';
+import '@angular/http';
 // import '@angular/forms';
 // import '@angular/animations';
 
@@ -24,7 +24,6 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/do';
 import 'font-awesome/scss/font-awesome';
-import 'ng2-smart-table';
 import 'hammerjs';
 
 

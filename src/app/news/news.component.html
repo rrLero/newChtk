@@ -27,7 +27,7 @@
                     (mouseout) = "onRemove(dish.id);"
       >
         <img *ngIf="dish.image"  width="100%" src={{BaseURL+dish.image}}>
-        <img *ngIf="!dish.image"  height="100%" src="/src/assets/images/Federer.png">
+        <img *ngIf="!dish.image"  height="100%" [src]='imageUrl'>
         <md-grid-tile-footer>
           <p md-line><span>{{dish.date}}</span></p>
           <h1 md-line>{{dish.title | uppercase}}</h1>

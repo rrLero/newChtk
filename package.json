@@ -10,7 +10,7 @@
   "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --hot",
-    "build-aot": "rm -rf dist && webpack --config config/webpack.aot.js --bail"
+    "build": "rm -rf dist && webpack --config config/webpack.aot.js --bail"
   },
   "dependencies": {
     "@angular/animations": "4.1",
@@ -29,9 +29,9 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
-    "ng2-smart-table": "^1.2.1",
     "rxjs": "^5.4.2",
     "tslint": "^5.5.0",
+    "yarn": "^0.27.5",
     "zone.js": "0.8.12"
   },
   "devDependencies": {

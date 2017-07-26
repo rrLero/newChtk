@@ -1,1 +1,1 @@
-export const baseURL = 'http://www.chtk.com.ua/';
+export const baseURL = 'http://rrlero.pythonanywhere.com/';
