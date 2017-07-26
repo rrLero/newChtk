@@ -16,8 +16,8 @@ module.exports = {
         extensions: ['.ts', '.js', '.json', '.html', '.css', '.scss', '.xlf'],
         modules: [helpers.root('src'), 'node_modules'],
         alias: {
-           public: helpers.root('public')
-       }
+            public: helpers.root('public')
+        }
     },
 
     module: {
@@ -37,11 +37,26 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|svg|ico)$/,
                 use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: 'assets/img/[name].[ext]'
+                        loader: 'file-loader',
+                        options: {
+                            name: 'public/assets/images/[name].[ext]'
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                optimizationLevel: 4,
+                                quality: 65
+                            },
+                            pngquant: {
+                                quality: 65,
+                                speed: 4
+                            }
+                        }
                     }
-                }]
+                ]
             },
             {
                 test: /\.json$/,
