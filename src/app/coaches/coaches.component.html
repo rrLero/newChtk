@@ -1,0 +1,43 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+    <div fxFlex>
+        <div>
+            <h3>Наши тренера</h3>
+            <hr>
+        </div>
+    </div>
+    <div fxFlex>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center">
+            <md-card class="coachess"
+                     fxFlex="100"
+                     *ngFor="let cour of coaches"
+                     fxFlexOffset="20px"
+                     (mouseover) = "onSelect(cour.id);"
+                     id="{{cour.id}}"
+                     (mouseout) = "onRemove(cour.id);"
+                     >
+                <md-card-header>
+                    <img md-card-avatar src="/src/assets/images/logo2.png">
+                    <md-card-title>
+                        {{cour.name | uppercase}}
+                    </md-card-title>
+                    <md-card-subtitle>
+                        {{cour.surname}}
+                    </md-card-subtitle>
+                </md-card-header>
+                <img md-card-image *ngIf="cour.image" src="{{BaseURL + 'static/files/' + cour.image}}" alt = "{{cour.name}}">
+                <img md-card-image *ngIf="!cour.image" src="/src/assets/images/Federer.png" alt = "{{cour.name}}">
+                <md-card-content>
+                    {{ cour.description}} <br>
+                    <p>
+                        <i class="fa fa-phone"></i> : {{cour.phones}}
+                    </p>
+                </md-card-content>
+                <md-card-actions>
+                    <a md-raised-button href="tel:{{cour.phones}}"><i class="fa fa-phone"></i> Call</a>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+</div>

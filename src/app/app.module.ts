@@ -1,8 +1,9 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { FormsModule } from '@angular/forms';
-// import { HttpModule } from '@angular/http';
+import { HttpModule } from '@angular/http';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule, MdButtonModule } from '@angular/material';
@@ -19,24 +20,30 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { RatingComponent } from './rating/rating.component';
 import { TableComponent } from './table/table.component';
+import { AddplayerComponent } from './addplayer/addplayer.component';
+import { CoachesComponent} from './coaches/coaches.component';
+
+import { baseURL} from './shared/baseurl';
 
 
 import { DishService } from './services/dish.service';
 import { CourtService } from './services/court.service';
 import { RatingService } from './services/rating.service';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+import { CoachesService } from './services/coaches.service';
 
 @NgModule({
     imports: [
         BrowserModule,
-        // BrowserAnimationsModule,
+        BrowserAnimationsModule,
         // FormsModule,
-        // HttpModule,
+        HttpModule,
         MaterialModule,
         FlexLayoutModule,
         AppRoutingModule,
         MdButtonModule,
         Ng2SmartTableModule,
-
+        ReactiveFormsModule
     ],
     declarations: [
         AppComponent,
@@ -47,9 +54,18 @@ import { RatingService } from './services/rating.service';
         FooterComponent,
         ContactComponent,
         RatingComponent,
-        TableComponent
+        TableComponent,
+        AddplayerComponent,
+        CoachesComponent
     ],
-    providers: [DishService, CourtService, RatingService],
+    providers: [
+        DishService,
+        CourtService,
+        RatingService,
+        ProcessHTTPMsgService,
+        CoachesService,
+        {provide: 'BaseURL', useValue: baseURL}
+        ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,8 @@ import { RatingService } from '../services/rating.service';
 
 import { Player } from '../shared/player';
 
+import 'rxjs/add/operator/switchMap';
+
 @Component({
     selector: 'app-table',
     templateUrl: './table.component.html',
@@ -20,10 +22,15 @@ export class TableComponent implements OnInit {
 
     settings = {
         columns: {
+            place: {
+                title: 'Place',
+                filter: false,
+                width: '10%'
+            },
             surname: {
                 title: 'Surname',
                 filter: false,
-                width: '90%'
+                width: '80%'
             },
             points: {
                 title: 'Points',
@@ -44,9 +51,10 @@ export class TableComponent implements OnInit {
                 private ratingservice: RatingService) { }
 
     ngOnInit() {
-        const year = +this.route.snapshot.params['year'];
-        this.data = this.ratingservice.getRating(year);
-        console.log(this.data)
+        // const year = +this.route.snapshot.params['year'];
+        this.route.params.switchMap((params: Params) => this.ratingservice.getRating(+params['year'] || 2017))
+            .subscribe(data => {this.data = data});
+        // this.ratingservice.getRating(year).subscribe(data => this.data = data);
     }
     goBack(): void {
         this.location.back();

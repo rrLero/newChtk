@@ -5,11 +5,17 @@ import { NewsdetailComponent }     from '../newsdetail/newsdetail.component';
 import { GooglecalendarComponent } from '../googlecalendar/googlecalendar.component';
 import { ContactComponent }        from '../contact/contact.component';
 import { RatingComponent }         from '../rating/rating.component';
+import { AddplayerComponent }      from '../addplayer/addplayer.component';
+import { CoachesComponent}         from '../coaches/coaches.component';
 
 export const routes: Routes = [
     {
-        path: 'home',
+        path: 'home/:page',
         component: NewsComponent
+    },
+    {
+        path: 'home',
+        redirectTo: '/home/1', pathMatch: 'full'
     },
     {
         path: 'shedule',
@@ -20,9 +26,18 @@ export const routes: Routes = [
         component: ContactComponent
     },
     {
-        path: 'rating/:year', component: RatingComponent
+        path: 'coaches',
+        component: CoachesComponent
     },
     {
-        path: '', redirectTo: '/home', pathMatch: 'full'
+        path: 'rating/:year',
+        component: RatingComponent
     },
+    {
+        path: '', redirectTo: '/home/1', pathMatch: 'full'
+    },
+    {
+        path: 'admin/addplayer',
+        component: AddplayerComponent
+    }
 ];

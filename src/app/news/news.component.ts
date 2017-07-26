@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Params, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
 import {Dish} from '../shared/news';
-import {PATH} from '../shared/pathes';
 import { DishService } from '../services/dish.service';
 import { RatingService } from '../services/rating.service';
 
 import { Player } from '../shared/player';
+
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-news',
@@ -13,17 +17,33 @@ import { Player } from '../shared/player';
 })
 export class NewsComponent implements OnInit {
 
-  path = PATH;
   dishes: Dish[];
   selectedDish: Dish;
   rating: Player[];
+  prev: number;
+  next: number;
 
-  constructor(private dishService: DishService, private ratingservice: RatingService) { }
+  constructor(private dishService: DishService, private ratingservice: RatingService, private location: Location,
+              private route: ActivatedRoute, @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
-    this.dishes = this.dishService.getDishes();
-    this.selectedDish = this.dishes[0];
-    this.rating = this.ratingservice.getRating();
+    // this.dishService.getDishes().subscribe(dishes => {this.dishes = dishes; this.selectedDish = this.dishes[0]});
+    this.ratingservice.getRating().subscribe(rating => this.rating = rating);
+
+    this.route.params
+        .switchMap((params: Params) => this.dishService.getDishes(+params['page']))
+        .subscribe(dishes => {
+          this.dishes = dishes;
+          if (this.dishes) {
+              this.selectedDish = this.dishes[0]
+          }
+          this.setPrevNext()
+        });
+  }
+
+  setPrevNext() {
+      this.prev = this.dishService.getPrev();
+      this.next = this.dishService.getNext();
   }
 
   onSelect(dish: Dish) {

@@ -1,0 +1,27 @@
+<div class="form-player">
+<legend class="text-center">Add Player</legend>
+<form novalidate [formGroup]="addplayerForm" (ngSubmit)="onSubmit()">
+        <div class="half-width">
+            <input formControlName="player_name" placeholder="First Name" type="text" required>
+            <div>
+                <span [hidden]="!(formErrors.player_name)">
+                  {{formErrors.player_name}}</span>
+            </div>
+        </div>
+        <div class="half-width">
+            <input formControlName="player_surname" placeholder="Last Name" type="text" required>
+            <div>
+                <span [hidden]="!(formErrors.player_surname)">
+                  {{formErrors.player_surname}}</span>
+            </div>
+        </div>
+        <div class="half-width">
+            <input formControlName="path_photo" placeholder="path_photo" type="text" required>
+            <div>
+                <span [hidden]="!(formErrors.path_photo)">
+                  {{formErrors.path_photo}}</span>
+            </div>
+        </div>
+    <button type="submit" md-button class="background-primary text-floral-white" [disabled]="addplayerForm.invalid">Submit</button>
+</form>
+</div>

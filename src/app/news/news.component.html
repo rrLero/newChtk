@@ -1,12 +1,22 @@
 <div class="container"
-     fxLayout="row"
+     fxLayout="column"
+     fxLayout.gt-sm="row"
      fxLayoutGap="10px">
   <div fxFlex>
     <app-newsdetail [dish]="selectedDish"></app-newsdetail>
   </div>
   <div fxFlex>
     <div>
-      <h3>News</h3>
+      <h3>News
+        <span class="prevnext">
+          <button md-button *ngIf="prev" [routerLink]="['/home', prev]">
+            <span class="fa fa-chevron-left fa-lg"></span>
+          </button>
+          <button md-button *ngIf="next" [routerLink]="['/home', next]">
+            <span class="fa fa-chevron-right fa-lg"></span>
+          </button>
+        </span>
+      </h3>
       <hr>
     </div>
     <md-grid-list cols="1" rowHeight="200px" class="news">
@@ -16,10 +26,10 @@
                     (mouseover) = "onSetup(dish.id);"
                     (mouseout) = "onRemove(dish.id);"
       >
-        <img *ngIf="dish.image"  width="100%" src={{path+dish.image}}>
+        <img *ngIf="dish.image"  width="100%" src={{BaseURL+dish.image}}>
         <img *ngIf="!dish.image"  height="100%" src="/src/assets/images/Federer.png">
         <md-grid-tile-footer>
-          <p md-line><span>{{dish.date | date :'short'}}</span></p>
+          <p md-line><span>{{dish.date}}</span></p>
           <h1 md-line>{{dish.title | uppercase}}</h1>
         </md-grid-tile-footer>
       </md-grid-tile>
@@ -27,7 +37,7 @@
   </div>
   <div fxFlex>
     <div class="newTable">
-      <h3 >Rating</h3>
+      <h3>Rating</h3>
       <hr>
       <app-table [rating] = "rating"></app-table>
     </div>

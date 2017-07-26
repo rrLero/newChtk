@@ -1,1 +1,0 @@
-export const PATH = 'http://www.chtk.com.ua/', PATH_COURTS = PATH + 'static/files/';

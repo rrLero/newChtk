@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 
 import { Dish } from '../shared/news';
-import { PATH } from '../shared/pathes';
+import {inject} from '@angular/core/testing';
 
 @Component({
   selector: 'app-newsdetail',
@@ -11,8 +11,7 @@ import { PATH } from '../shared/pathes';
 export class NewsdetailComponent implements OnInit {
   @Input()
   dish: Dish;
-  path = PATH;
-  constructor() { }
+  constructor(@Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
   }

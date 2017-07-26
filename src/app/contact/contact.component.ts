@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {Court} from '../shared/court';
 import {CourtService} from '../services/court.service';
-import {PATH_COURTS} from '../shared/pathes';
+
 
 
 @Component({
@@ -10,13 +10,12 @@ import {PATH_COURTS} from '../shared/pathes';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  path: string = PATH_COURTS;
   court: Court[];
 
-  constructor(private courtservice: CourtService) { }
+  constructor(private courtservice: CourtService, @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
-    this.court = this.courtservice.getCourts();
+    this.courtservice.getCourts().subscribe(court => this.court = court);
   }
   onSelect(id: number) {
     this.courtservice.setActive(id);

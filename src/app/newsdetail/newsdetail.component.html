@@ -6,10 +6,10 @@
             {{dish.title | uppercase}}
           </md-card-title>
           <md-card-subtitle>
-            {{dish.date | date}}
+            {{dish.date}}
           </md-card-subtitle>
         </md-card-header>
-        <img md-card-image *ngIf="dish.image" src="{{path + dish.image}}" alt = "{{dish.title}}">
+        <img md-card-image *ngIf="dish.image" src="{{BaseURL + dish.image}}" alt = "{{dish.title}}">
         <img md-card-image *ngIf="!dish.image" src="/src/assets/images/Federer.png" alt = "{{dish.title}}">
         <md-card-content>
           <p>{{ dish.text}}</p>

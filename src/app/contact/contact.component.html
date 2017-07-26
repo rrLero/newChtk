@@ -8,14 +8,14 @@
     </div>
   </div>
   <div fxFlex >
-    <h3>Location Information</h3>
-    <div fxLayout="row" fxLayout.gt-sm="row">
+    <div fxLayout="column" fxLayout.gt-sm="row">
       <md-card fxFlex="50"
                fxFlexOffset="20px"
                *ngFor="let cour of court"
                (mouseover) = "onSelect(cour.id);"
                id="{{cour.id}}"
-               (mouseout) = "onRemove(cour.id);">
+               (mouseout) = "onRemove(cour.id);"
+                class="contacts">
         <md-card-header>
           <img md-card-avatar src="/src/assets/images/logo2.png">
           <md-card-title>
@@ -25,7 +25,7 @@
             {{cour.adress}}
           </md-card-subtitle>
         </md-card-header>
-        <img md-card-image *ngIf="cour.image" src="{{path + cour.image}}" alt = "{{cour.name}}">
+        <img md-card-image *ngIf="cour.image" src="{{BaseURL + 'static/files/' + cour.image}}" alt = "{{cour.name}}">
         <img md-card-image *ngIf="!cour.image" src="/src/assets/images/Federer.png" alt = "{{cour.name}}">
         <md-card-content>
           {{ cour.description}} <br>
