@@ -1,7 +1,7 @@
     <div>
       <md-card *ngIf="dish">
         <md-card-header>
-          <img md-card-avatar src="/src/assets/images/logo2.png">
+          <img md-card-avatar src="public/assets/images/logo2.png">
           <md-card-title>
             {{dish.title | uppercase}}
           </md-card-title>
@@ -10,18 +10,13 @@
           </md-card-subtitle>
         </md-card-header>
         <img md-card-image *ngIf="dish.image" src="{{BaseURL + dish.image}}" alt = "{{dish.title}}">
-        <img md-card-image *ngIf="!dish.image" src="/src/assets/images/Federer.png" alt = "{{dish.title}}">
+        <img md-card-image *ngIf="!dish.image" src="public/assets/images/Federer.png" alt = "{{dish.title}}">
         <md-card-content>
           <p>{{ dish.text}}</p>
         </md-card-content>
         <md-card-actions>
           <button md-button>LIKE</button>
-          <button md-button>SHARE</button>          
+          <button md-button>SHARE</button>
         </md-card-actions>
       </md-card>
     </div>
-
-
-
-
-

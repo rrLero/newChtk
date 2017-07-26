@@ -9,7 +9,6 @@ import { RatingService } from '../services/rating.service';
 import { Player } from '../shared/player';
 
 import 'rxjs/add/operator/switchMap';
-import '../../assets/images/Federer.png';
 
 @Component({
   selector: 'app-news',
@@ -27,7 +26,7 @@ export class NewsComponent implements OnInit {
 
   constructor(private dishService: DishService, private ratingservice: RatingService, private location: Location,
               private route: ActivatedRoute, @Inject('BaseURL') private BaseURL)  {
-      this.imageUrl = 'src/assets/images/Federer.png';
+    //   this.imageUrl = 'src/assets/images/Federer.png';
   }
 
   ngOnInit() {

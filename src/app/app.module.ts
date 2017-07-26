@@ -23,7 +23,6 @@ import { AddplayerComponent } from './addplayer/addplayer.component';
 import { CoachesComponent} from './coaches/coaches.component';
 
 import { baseURL} from './shared/baseurl'
-import { imageURL } from './shared/imageurl'
 
 
 import { DishService } from './services/dish.service';
@@ -64,7 +63,6 @@ import { CoachesService } from './services/coaches.service';
         ProcessHTTPMsgService,
         CoachesService,
         {provide: 'BaseURL', useValue: baseURL},
-        {provide: 'ImageURL', useValue: imageURL},
         ],
     bootstrap: [AppComponent]
 })
