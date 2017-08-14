@@ -1,4 +1,4 @@
-//@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~font-awesome/css/font-awesome.css";
 @import '~@angular/material/prebuilt-themes/purple-green.css';
 $lt-gray: #ddd;
 $background-dark: #512DA8;
@@ -18,12 +18,7 @@ $divider-color:        #BDBDBD;
   padding: $pad-up-down $pad-left-right;
 }
 
-.container {
-  margin: 20px;
-  display: flex;
-}
-
-html, body {
+html {
   height: 100%;
 }
 
@@ -36,6 +31,8 @@ body {
   padding: 0;
   margin: 0;
   margin-right: calc(-1 * (100vw - 100%));
+  position: relative;
+  min-height: 100%;
 }
 
 .background-primary {
@@ -48,6 +45,19 @@ body {
   color: floralwhite!important;
 }
 
-.flex-spacer {
-  flex: 1 1 auto;
+.container {
+  display: flex;
+  flex-flow: row wrap ;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
 }
+
+.container > .flex {
+  flex: 0 1 auto;
+  align-self: auto;
+  margin: 10px;
+}
+
+
+

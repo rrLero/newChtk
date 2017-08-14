@@ -1,5 +1,5 @@
 @import '~@angular/material/theming';
-
+@import "~bootstrap/scss/bootstrap.scss";
 @include mat-core();
 
 $my-app-primary: mat-palette($mat-green);
@@ -10,9 +10,6 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
 @include angular-material-theme($my-app-theme);
 
-.mat-toolbar[_ngcontent-c1]{
-  background: #0d9012;
-}
 
 $lt-gray: #ddd;
 $background-dark: #512DA8;
@@ -20,19 +17,32 @@ $background-light: #005acd;
 $background-pale: #D1C4E9;
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
-  margin: 0px auto;
-  padding: $pad-up-down $pad-left-right;
-}
 
-.jumbotron {
-  @include zero-margin(70px,30px);
-  background: #4caf50;
-  color: #FFFFFF;
-  height: 70px;
+
 }
 
 $background-moredark: #225d10;
 
 .active {
-  background: $background-moredark;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-flow: row nowrap ;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.container > .flex {
+  flex: 1 1 auto;
+  align-self: auto;
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+.navbar-brand {
+  padding: 20px;
 }

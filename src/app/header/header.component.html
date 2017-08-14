@@ -1,30 +1,58 @@
-<md-toolbar color="primary">
-  <a md-button routerLink="/home" routerLinkActive="active"><span class="fa fa-home fa-lg"></span> Home</a>
-  <a md-button routerLink="/shedule" routerLinkActive="active"><span class="fa fa-info fa-lg"></span> Расписание</a>
-  <a md-button routerLink="/coaches" routerLinkActive="active"><span class="fa fa-list fa-lg"></span> Тренера</a>
-  <a md-button routerLink="/contacts" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span> Корты</a>
-  <a md-button [routerLink]="['/rating', 2017]" routerLinkActive="active"><span class="fa fa-list fa-lg"> </span> Рейтинг</a>
-</md-toolbar>
+<!--<md-toolbar color="primary" hidden>-->
+  <!--<a md-button routerLink="/home" routerLinkActive="active"> Home</a>-->
+  <!--<a md-button routerLink="/shedule" routerLinkActive="active"> Расписание</a>-->
+  <!--<a md-button routerLink="/coaches" routerLinkActive="active"> Тренера</a>-->
+  <!--<a md-button routerLink="/contacts" routerLinkActive="active"> Корты</a>-->
+  <!--<a md-button [routerLink]="['/rating', 2017]" routerLinkActive="active"> Рейтинг</a>-->
+<!--</md-toolbar>-->
 
-<div class="container jumbotron"
-     fxLayout="row"
-     fxLayoutAlign.xs="center center"
-     fxLayoutAlign.sm="center center"
-     fxLayoutAlign.gt-sm="center center"
-     fxLayoutGap="10px">
-
-  <div fxFlex fxFlex.gt-sm="25%" fxLayoutAlign="center center" >
-    <img src="public/assets/images/logo2.png" alt="Logo" height="120px">
+<!--<div class="jumbotron container">-->
+  <!--<div class="flex">-->
+    <!--<img src="public/assets/images/logo2.png" alt="Logo" height="120px">-->
+  <!--</div>-->
+  <!--<div class="row">-->
+    <!---->
+    <!---->
+  <!--</div>-->
+  <!--<div class="flex">-->
+    <!--<img src="public/assets/images/logo2.png" alt="Logo" height="120px">-->
+  <!--</div>-->
+<!--</div>-->
+<nav class="navbar navbar-toggleable-sm navbar-inverse bg-faded" style="background-color: #225d10">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" routerLink="/home">
+  </a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active"><span class="fa fa-home fa-lg"></span> Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/shedule" routerLinkActive="active"><span class="fa fa-list fa-lg"></span> Расписание</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/coaches" routerLinkActive="active"><span class="fa fa-list fa-lg"></span> Тренера</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contacts" routerLinkActive="active"><span class="fa fa-info fa-lg"></span> Корты</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/rating', 2017]" routerLinkActive="active"><span class="fa fa-trophy fa-lg"></span> Рейтинг</a>
+      </li>
+    </ul>
   </div>
-
-  <div fxFlex fxFlex.gt-sm="50%" fxShow.sm="false"
-       fxShow.xs="false"
-       fxLayoutAlign="center center" >
-    <h2 align="center">ЧТК - Черкасский Теннисный Клуб</h2>
-    <p align="center">Сайт для всех любителей большого тенниса в Черкассах<br> и не только</p>
-  </div>
-  <div fxFlex fxFlex.gt-sm="25%" fxLayoutAlign="center center" >
-    <img src="public/assets/images/logo2.png" alt="Logo" height="120px">
-  </div>
-
-</div>
+</nav>
+<nav class="navbar navbar-light bg-faded" style="background-color: #4caf50">
+  <a class="navbar-brand" routerLink="/home">
+    <span class="container">
+      <img src="public/assets/images/logo2.png" alt="Logo" height="120px">
+      <div class="flex hidden-sm-down">
+        <h2>ЧТК - Черкасский Теннисный Клуб</h2>
+        <p>Сайт для всех любителей большого тенниса в Черкассах<br> и не только</p>
+      </div>
+      <img src="public/assets/images/logo2.png" alt="Logo" height="120px" class="hidden-md-down">
+    </span>
+  </a>
+</nav>

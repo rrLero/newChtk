@@ -4,11 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
-import { FlexLayoutModule } from '@angular/flex-layout';
+import 'hammerjs';
 import { MaterialModule, MdButtonModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-// import 'hammerjs';
+import 'jquery';
+import 'tether';
+import 'bootstrap';
+import 'bootstrap/js/dist/util';
+import 'bootstrap/js/dist/dropdown';
 
 import { AppComponent }  from './app.component';
 import { NewsComponent } from './news/news.component';
@@ -21,6 +24,8 @@ import { RatingComponent } from './rating/rating.component';
 import { TableComponent } from './table/table.component';
 import { AddplayerComponent } from './addplayer/addplayer.component';
 import { CoachesComponent} from './coaches/coaches.component';
+// import { RestangularModule } from 'ngx-restangular';
+// import { RestangularConfigFactory } from './shared/restConfig';
 
 import { baseURL} from './shared/baseurl'
 
@@ -32,17 +37,6 @@ import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import { CoachesService } from './services/coaches.service';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        // FormsModule,
-        HttpModule,
-        MaterialModule,
-        FlexLayoutModule,
-        AppRoutingModule,
-        MdButtonModule,
-        ReactiveFormsModule
-    ],
     declarations: [
         AppComponent,
         NewsComponent,
@@ -55,6 +49,17 @@ import { CoachesService } from './services/coaches.service';
         TableComponent,
         AddplayerComponent,
         CoachesComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        // FormsModule,
+        HttpModule,
+        MaterialModule,
+        AppRoutingModule,
+        MdButtonModule,
+        ReactiveFormsModule,
+        // RestangularModule.forRoot(RestangularConfigFactory)
     ],
     providers: [
         DishService,

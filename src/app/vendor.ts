@@ -2,10 +2,13 @@ import '@angular/platform-browser';
 import '@angular/core';
 import '@angular/common';
 import '@angular/router';
+// import 'ngx-restangular';
 
 import '@angular/material'
-import '@angular/flex-layout';
-
+import 'hammerjs';
+import 'jquery';
+import 'tether';
+import 'bootstrap';
 
 import '@angular/platform-browser/animations';
 import '@angular/http';
@@ -24,7 +27,6 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/do';
 import 'font-awesome/scss/font-awesome';
-import 'hammerjs';
 
 
 if (process.env.ENV === 'dev') {

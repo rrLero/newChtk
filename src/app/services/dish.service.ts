@@ -4,6 +4,7 @@ import { Dish } from '../shared/news';
 import { Http, Response } from '@angular/http';
 import { baseURL } from '../shared/baseurl';
 import { ProcessHTTPMsgService } from './process-httpmsg.service';
+// import { RestangularModule, Restangular } from "ngx-restangular";
 
 import { Observable } from 'rxjs/Observable';
 
@@ -23,6 +24,9 @@ export class DishService {
 
   getDishes(page): Observable<Dish[]> {
     this.step = 4;
+    // return this.restangular.all('api/news').getList().map(res => {
+    //     return this.getArray(this.step, res, page)
+    // })
     return this.http.get(baseURL + 'api/news').map(res => {
         return this.getArray(this.step, this.processHTTPMsgService.extractData(res), page)
         })

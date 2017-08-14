@@ -14,9 +14,14 @@ p {
   font-size: 0.6em;
 }
 .footer{
+  height: 70px;
   background-color: $background-pale;
   @include zero-margin(20px, 0px);
   color: #FFFFFF;
+  position: absolute;
+  bottom: -130px;
+  left: 0;
+  right: 0;
 }
 
 .btn-facebook {color:#fff!important; background-color:#3b5998!important;}

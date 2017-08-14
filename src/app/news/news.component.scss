@@ -1,10 +1,28 @@
-.news {
-  margin-bottom: 20px;
-}
+
+
+
 #active {
   background: #4caf50;
   border-style: outset;
 }
 .prevnext .mat-button {
-  line-height: 26px;
+  line-height: 20px;
  }
+
+.container > .flex {
+  width: 30%;
+}
+
+@media (max-width: 576px) {
+  .container > .flex {
+    width: 100%;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .container > .flex {
+    width: 100%;
+  }
+}
+
+
