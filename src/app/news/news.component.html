@@ -19,8 +19,7 @@
         <md-grid-tile *ngFor="let dish of dishes"
                       (click) = "onSelect(dish);"
                       id="{{dish.id}}"
-                      (mouseover) = "onSetup(dish.id);"
-                      (mouseout) = "onRemove(dish.id);"
+                      appHighlight
         >
           <img *ngIf="dish.image"  width="100%" src={{BaseURL+dish.image}}>
           <img *ngIf="!dish.image"  height="100%" src="public/assets/images/Federer.png">

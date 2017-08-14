@@ -16,11 +16,11 @@ export class CoachesComponent implements OnInit {
     ngOnInit() {
         this.coachesservice.getCoaches().subscribe(coaches => this.coaches = coaches);
     }
-    onSelect(id: number) {
-        this.coachesservice.setActive(id);
-    }
-    onRemove(id: number) {
-        this.coachesservice.setBack(id);
-    }
+    // onSelect(id: number) {
+    //     this.coachesservice.setActive(id);
+    // }
+    // onRemove(id: number) {
+    //     this.coachesservice.setBack(id);
+    // }
 
 }

@@ -7,7 +7,7 @@
     </tr>
     </thead>
     <tbody *ngFor="let player of rating">
-    <tr>
+    <tr appHighlight>
         <th scope="row">{{player.place}}</th>
         <td>{{player.surname}}</td>
         <td>{{player.points}}</td>

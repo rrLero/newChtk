@@ -59,5 +59,18 @@ body {
   margin: 10px;
 }
 
+.highlight, .card.highlight {
+  background-color: #4caf50;
+  border: 1px solid $primary-color-dark;
+  z-index: 1;
+  transform: scale(1.01);
+}
 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: center;
+  background: #424242;
+  color: #FFFFFF;
+}
 

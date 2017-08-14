@@ -24,6 +24,7 @@ import { RatingComponent } from './rating/rating.component';
 import { TableComponent } from './table/table.component';
 import { AddplayerComponent } from './addplayer/addplayer.component';
 import { CoachesComponent} from './coaches/coaches.component';
+import { HighlightDirective} from "./directives/highlight.directive";
 // import { RestangularModule } from 'ngx-restangular';
 // import { RestangularConfigFactory } from './shared/restConfig';
 
@@ -48,7 +49,8 @@ import { CoachesService } from './services/coaches.service';
         RatingComponent,
         TableComponent,
         AddplayerComponent,
-        CoachesComponent
+        CoachesComponent,
+        HighlightDirective
     ],
     imports: [
         BrowserModule,
