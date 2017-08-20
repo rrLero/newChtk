@@ -7,13 +7,22 @@ import { DishService } from '../services/dish.service';
 import { RatingService } from '../services/rating.service';
 
 import { Player } from '../shared/player';
-
 import 'rxjs/add/operator/switchMap';
+import { visibility, flyInOut, expand } from "../animations/app.animation";
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss']
+  styleUrls: ['./news.component.scss'],
+    host: {
+        '[@flyInOut]': 'true',
+        'style': 'display: block;'
+    },
+    animations: [
+        flyInOut(),
+        visibility(),
+        expand()
+    ]
 })
 export class NewsComponent implements OnInit {
 
@@ -23,6 +32,7 @@ export class NewsComponent implements OnInit {
   prev: number;
   next: number;
   imageUrl: string;
+  visibility = 'shown';
 
   constructor(private dishService: DishService, private ratingservice: RatingService, private location: Location,
               private route: ActivatedRoute, @Inject('BaseURL') private BaseURL)  {
@@ -33,13 +43,14 @@ export class NewsComponent implements OnInit {
     this.ratingservice.getRating().subscribe(rating => this.rating = rating);
 
     this.route.params
-        .switchMap((params: Params) => this.dishService.getDishes(+params['page']))
+        .switchMap((params: Params) => {this.visibility = 'hidden'; return this.dishService.getDishes(+params['page'])})
         .subscribe(dishes => {
           this.dishes = dishes;
           if (this.dishes) {
               this.selectedDish = this.dishes[0]
           }
-          this.setPrevNext()
+          this.setPrevNext();
+          this.visibility = 'shown';
         });
   }
 

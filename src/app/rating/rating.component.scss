@@ -4,4 +4,38 @@
   margin-left: 13%;
 }
 
+.coach {
+  padding: 10px 16px;;
+}
+
+.rating-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: center;
+  width: 300px;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap ;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+  margin: 0 10%;
+}
+
+.container > .flex-1 {
+  order: 2;
+  flex: 1 1 auto;
+  align-self: auto;
+  margin: 10px;
+}
+
+.container > .flex-2 {
+  order: 1;
+  flex: 1 1 auto;
+  align-self: auto;
+  margin: 10px;
+}
+
 

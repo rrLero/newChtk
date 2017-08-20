@@ -1,3 +1,22 @@
-<div class="ng2-table">
-        <app-table></app-table>
+<div class="container">
+        <div class="flex-1">
+                <app-table></app-table>
+        </div>
+        <div class="flex-2" [@visibility]="visibility">
+                <div class="rating-card" *ngIf="widePlayer" >
+                        <div class="coach">
+                                <h4>{{widePlayer.surname}} {{widePlayer.name}}</h4>
+
+                        </div>
+                        <img *ngIf="widePlayer.path_photo" src="{{BaseURL + widePlayer.path_photo}}" alt = "" style="width:100%;">
+                        <img *ngIf="!widePlayer.path_photo" src="public/assets/images/Federer.png" alt = "" style="width:100%;">
+                        <div class="coach">
+                                <p class="title"><i class="fa fa-star fa-lg"></i> : {{widePlayer.points}}</p>
+                                <p class="title">1-st <span ><img src="public/assets/images/logo2.png" class="logo"></span> - {{widePlayer.place1}}</p>
+                                <p class="title">2-nd <span><img src="public/assets/images/logo2.png" class="logo"></span> - {{widePlayer.place2}}</p>
+                                <p class="title">3-rd <span><img src="public/assets/images/logo2.png" class="logo"></span> - {{widePlayer.place3}}</p>
+                                <p></p>
+                        </div>
+                </div>
+        </div>
 </div>

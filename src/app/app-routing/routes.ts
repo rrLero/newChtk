@@ -30,8 +30,12 @@ export const routes: Routes = [
         component: CoachesComponent
     },
     {
-        path: 'rating/:year',
+        path: 'rating/:year/:id_player',
         component: RatingComponent
+    },
+    {
+        path: 'rating/:year',
+        redirectTo: '/rating/:year/3', pathMatch: 'full'
     },
     {
         path: '', redirectTo: '/home/1', pathMatch: 'full'

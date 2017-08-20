@@ -1,9 +1,9 @@
 <div class="news">
   <div class="container">
     <div class="flex">
-      <app-newsdetail [dish]="selectedDish"></app-newsdetail>
+      <app-newsdetail [dish]="selectedDish" [@expand]></app-newsdetail>
     </div>
-    <div class="flex">
+    <div class="flex" [@visibility]="visibility">
       <h3>News
         <span class="prevnext">
           <button md-button *ngIf="prev" [routerLink]="['/home', prev]">

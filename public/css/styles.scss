@@ -64,6 +64,7 @@ body {
   border: 1px solid $primary-color-dark;
   z-index: 1;
   transform: scale(1.01);
+  cursor: pointer;
 }
 
 .card {
@@ -72,5 +73,11 @@ body {
   text-align: center;
   background: #424242;
   color: #FFFFFF;
+}
+
+.logo {
+  width: 30px;
+  padding: 0 5px 0;
+  margin: -7px
 }
 

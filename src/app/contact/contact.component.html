@@ -4,7 +4,7 @@
   <div class="flex" *ngFor="let cour of court">
     <div class="card" appHighlight>
       <div class="coach">
-        <h4><span><img src="public/assets/images/logo2.png" style="width: 20px; padding: 0; margin: 0"></span> {{cour.name}}</h4>
+        <h4><span><img src="public/assets/images/logo2.png" class="logo"></span> {{cour.name}}</h4>
       </div>
       <img *ngIf="cour.image" src="{{BaseURL + 'static/files/' + cour.image}}" alt = "{{cour.name}}" style="width:100%;">
       <img *ngIf="!cour.image" src="public/assets/images/Federer.png" alt = "{{cour.name}}" style="width:100%;">

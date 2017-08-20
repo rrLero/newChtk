@@ -13,7 +13,7 @@ import 'bootstrap';
 import '@angular/platform-browser/animations';
 import '@angular/http';
 // import '@angular/forms';
-// import '@angular/animations';
+import '@angular/animations';
 
 import 'rxjs/Observable';
 import 'rxjs/Subject';

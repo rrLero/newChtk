@@ -6,6 +6,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { RatingService } from '../services/rating.service';
+import { flyInOut} from "../animations/app.animation";
 
 import { Player } from '../shared/player';
 
@@ -14,7 +15,14 @@ import 'rxjs/add/operator/switchMap';
 @Component({
     selector: 'app-table',
     templateUrl: './table.component.html',
-    styleUrls: ['./table.component.scss']
+    styleUrls: ['./table.component.scss'],
+    host: {
+        '[@flyInOut]': 'true',
+        'style': 'display: block;'
+    },
+    animations: [
+        flyInOut()
+    ]
 })
 export class TableComponent implements OnInit {
     @Input()
